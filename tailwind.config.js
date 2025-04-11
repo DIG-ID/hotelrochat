@@ -22,7 +22,10 @@ module.exports = {
         //wider: '.06em',
       },
       colors: {
-        
+        gold: '#C2963F',
+        darkgray: '#333333',
+        white: '#FFFFFF',
+        black: '#000000',
       },
       transitionTimingFunction: {
         //'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
