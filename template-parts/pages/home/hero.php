@@ -1,6 +1,26 @@
+<?php
+$bg_image_id = get_field('hero_background');
+$bg_image_url = wp_get_attachment_image_src($bg_image_id, 'full'); // 'full' or a custom image size
+?>
+
 <section class="section-hero relative w-full">
     <div class="custom-container">
-        <h1 class="text-4xl">Welcome to Hotel Rochat</h1>
-        <p class="font-prata text-lg">Boutique comfort in the heart of Basel.</p>
+        <div class="xl:h-[630px] bg-no-repeat bg-cover bg-center" <?php if( $bg_image_url ): ?> style="background-image: url('<?php echo esc_url($bg_image_url[0]); ?>')" <?php endif; ?>>
+            <div class="block mx-[35px] py-[30px]">
+                <a href="<?php echo get_home_url(); ?>" id="grand-logo">
+                    <?php 
+                        $logo = get_field('general_logo', 'option');
+                        $size = 'full';
+                        if( $logo ) {
+                            echo wp_get_attachment_image( $logo, $size );
+                        } 
+                    ?>
+                </a>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <h1 class="main-title-big text-gold"><?php the_field( 'hero_title' ); ?></h1>
+                <a href="<?php the_field( 'general_booking_engine_url', 'option' ); ?>" class="btn btn-primary" target="_blank"><?php esc_html_e( 'Jetzt buchen', 'hotelrochat' ) ?></a>
+            </div>
+        </div>
     </div>
 </section>
