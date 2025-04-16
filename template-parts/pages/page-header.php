@@ -18,7 +18,7 @@ $bg_image_url = get_stylesheet_directory_uri() . '/assets/images/image-header.jp
                     </a>
                 </div>
                 <div>
-                    <a href="<?php the_field( 'general_booking_engine_url', 'option' ); ?>" class="btn btn-primary" target="_blank"><?php esc_html_e( 'Jetzt buchen', 'hotelrochat' ) ?></a>
+                    <a href="<?php the_field( 'general_booking_engine_url', 'option' ); ?>" class="btn btn-primary" target="_blank"><?php esc_html_e( 'Jetzt buchen', 'hotelrochat' ); ?></a>
                 </div>
             </div>
         </div>
