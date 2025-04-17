@@ -20,7 +20,7 @@
         </div>
     </div>
 </header>
-<div id="menu-overlay" class="fixed inset-0 bg-gold z-[9999] hidden items-center justify-center flex-col">
+<div id="menu-overlay" class="fixed inset-0 bg-[rgba(194,150,63,0.9)] z-[9999] hidden items-center justify-center flex-col">
     <button id="close-overlay" class="absolute top-6 right-6 text-white text-4xl font-light leading-none focus:outline-none hover:scale-110 transition-transform duration-200">
         &times;
     </button>
