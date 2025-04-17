@@ -7,7 +7,7 @@
         </div>
         <?php
         $args = array(
-            'post_type' => 'basel_erlebnis',
+            'post_type' => 'basel-erlebnis',
             'posts_per_page' => 3,
             'post_status' => 'publish'
         );

@@ -1,0 +1,27 @@
+#trigger-overlay .line
+    display: block
+    background: #C2963F
+    height: 2px
+    position: absolute
+    right: 0
+    border-radius: 1px
+    transition: all 0.4s
+
+#trigger-overlay .line.line-1
+    top: 0
+    width: 25px
+
+#trigger-overlay .line.line-2
+    top: 50%
+    width: 38.4615384615px
+    transform: translateY(-50%)
+
+#trigger-overlay .line.line-3
+    bottom: 0
+    width: 50px
+
+.menu-items
+    li > a
+        @apply font-prata text-[50px] text-white font-normal leading-[70px]
+        &:hover
+            @apply text-black
