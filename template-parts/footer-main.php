@@ -2,7 +2,16 @@
     <div class="custom-container pattern-bg">
         <div class="theme-grid py-10">
             <div class="col-span-2 md:col-span-6 xl:col-span-8">
-
+            <?php
+			$location = get_field( 'map', 'option' );
+			if ( $location ) :
+				?>
+				<div class="acf-map" data-zoom="14">
+					<div class="marker" data-lat="<?php echo esc_attr( $location['lat'] ); ?>" data-lng="<?php echo esc_attr( $location['lng'] ); ?>"></div>
+				</div>
+				<?php
+			endif;
+			?>
             </div>
             <div class="col-span-2 md:col-span-6 xl:col-span-4">
                 <h3 class="text-gold my-5"><?php the_field( 'contact_title', 'option' ); ?></h3>
