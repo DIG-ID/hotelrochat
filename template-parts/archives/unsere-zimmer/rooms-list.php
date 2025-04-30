@@ -31,7 +31,7 @@
             <div class="theme-grid">
             <?php
                 while ($zimmer_query->have_posts()) : $zimmer_query->the_post();
-                $featured_img = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                $featured_img = get_the_post_thumbnail_url(get_the_ID(), 'zimmer-image');
                 $post_link = get_permalink();
                 $post_title = get_the_title(); 
                 ?>

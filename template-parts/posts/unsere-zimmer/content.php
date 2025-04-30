@@ -8,7 +8,7 @@
                 <p class="text-body mb-10"><?php the_field( 'description' ); ?></p>
                 <h3 class="secondary-title text-gold mb-6"><?php esc_html_e( 'Services', 'hotelrochat' )  ?></h3>
                 <p class="text-body mb-3"><?php the_field( 'services' );  ?></p>
-                <a href="" class="btn-primary mt-5"><?php esc_html_e( 'Buchen sie jetzt', 'hotelrochat' ) ?></a>
+                <a href="<?php the_field( 'booking_link' ); ?>" class="btn-primary mt-5"><?php esc_html_e( 'Buchen sie jetzt', 'hotelrochat' ) ?></a>
             </div>
             <div class="col-span-2 md:col-span-6 xl:col-span-8 col-start-1 md:col-start-1 xl:col-start-5 md:px-4">
                 <?php
