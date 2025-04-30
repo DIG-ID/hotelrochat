@@ -15,7 +15,7 @@
         ?>
 
         <?php if ($basel_erlebnis_query->have_posts()) : ?>
-            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[28px] md:w-2/3">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-[28px] md:w-2/3">
                 <?php while ($basel_erlebnis_query->have_posts()) : $basel_erlebnis_query->the_post(); 
                     $background_image = get_the_post_thumbnail_url(get_the_ID(), 'full');
                 ?>

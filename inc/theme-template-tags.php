@@ -5,7 +5,7 @@
  */
 function theme_before_main_content() {
 	?>
-	<main id="main-content" class="main-content overflow-hidden mt-auto">
+	<main id="main-content" class="main-content overflow-hidden mt-[64px]">
 	<?php
 }
 
