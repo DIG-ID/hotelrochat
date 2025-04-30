@@ -39,7 +39,7 @@
                         </div>
                         <?php endif; ?>
                         <?php if( get_sub_field('title') ) : ?>
-                        <div class="secondary-title text-gold">
+                        <div class="secondary-title text-gold mb-5">
                             <?php the_sub_field('title'); ?>                            
                         </div>
                         <?php endif; ?>
