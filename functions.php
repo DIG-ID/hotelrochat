@@ -25,9 +25,7 @@ function rochat_theme_setup() {
 
 	add_image_size( 'zimmer-image', 500, 334, array( 'center', 'center' ) );
 
-	add_image_size( 'long-term-image', 975, 650, array( 'center', 'center' ) );
-
-	add_image_size( 'offer-image', 625, 345, array( 'center', 'center' ) );
+	add_image_size( 'gallery-thumbs', 350, 200, array( 'center', 'center' ) );
 
 }
 
