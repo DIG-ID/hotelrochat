@@ -5,8 +5,8 @@ $bg_image_url = get_stylesheet_directory_uri() . '/assets/images/image-header.jp
 <section class="section-hero relative w-full">
     <div class="custom-container">
         <div class="bg-no-repeat bg-cover bg-top" style="background-image: linear-gradient(rgba(255,255,255,0), rgba(194,150,63,0.5)), url('<?php echo esc_url($bg_image_url); ?>');">
-            <div class="mx-[35px] pt-[30px] pb-[50px] flex flex-row justify-between items-center">
-                <div>
+            <div class="mx-[35px] pt-[30px] pb-[30px] md:pb-[50px] flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-10 md:mb-0">
                     <a href="<?php echo get_home_url(); ?>" id="grand-logo">
                         <?php 
                             $logo = get_field('general_logo', 'option');

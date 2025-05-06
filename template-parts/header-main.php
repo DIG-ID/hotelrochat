@@ -1,7 +1,7 @@
 <header id="header-main" class="header-main w-full z-50 overflow-hidden fixed bg-white top-0" itemscope itemtype="http://schema.org/WebSite">
     <div class="custom-container-fluid py-[15px]">
-        <div class="theme-grid">
-            <div class="col-span-2 md:col-span-2 xl:col-span-3">
+        <div class="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-12 md:gap-6">
+            <div class="col-span-1 md:col-span-1 xl:col-span-3">
             <?php
             if (function_exists('icl_get_languages')) {
                 $languages = icl_get_languages('skip_missing=0');
@@ -18,7 +18,7 @@
                         }
                     }
 
-                    echo '<form class="language-switcher inline-block relative xl:w-[210px] outline-0 focus-visible:outline-0 focus-visible:ring-0 focus:outline-0 focus:ring-0 border-b border-gold focus:ring-gold">';
+                    echo '<form class="language-switcher inline-block relative w-5/6 md:w-full lg:w-[210px] outline-0 focus-visible:outline-0 focus-visible:ring-0 focus:outline-0 focus:ring-0 border-b border-gold focus:ring-gold">';
                     echo '<select onchange="if (this.value) window.location.href=this.value" class="appearance-none xl:w-full text-gold text-body font-medium px-0 py-1 bg-white">';
                     foreach ($ordered_languages as $lang) {
                         $selected = $lang['active'] ? 'selected' : '';
@@ -40,12 +40,12 @@
 
 
             </div>
-            <div class="col-span-2 md:col-span-2 xl:col-span-6 text-center flex flex-row justify-center items-center">
-                <a href="mailto:<?php the_field( 'contact_email', 'option' ); ?>" class="text-body"><?php the_field( 'contact_email', 'option' ); ?></a>
-                <span class="text-gold font-bold w-3"> | </span>
+            <div class="col-span-1 md:col-span-4 xl:col-span-6 text-center flex flex-row justify-center items-center">
+                <a href="mailto:<?php the_field( 'contact_email', 'option' ); ?>" class="text-body hidden md:block"><?php the_field( 'contact_email', 'option' ); ?></a>
+                <span class="text-gold font-bold w-3 hidden md:block"> | </span>
                 <a href="tel:<?php the_field( 'contact_phone', 'option' ); ?>" class="text-body"><?php the_field( 'contact_phone', 'option' ); ?></a>
             </div>
-            <div class="col-span-2 md:col-span-2 xl:col-span-3">
+            <div class="col-span-1 md:col-span-1 xl:col-span-3">
             <a id="trigger-overlay" class="btn-menu ml-auto block relative w-[50px] h-[25px] cursor-pointer" role="button">
                 <span class="line line-1"></span>
                 <span class="line line-2"></span>

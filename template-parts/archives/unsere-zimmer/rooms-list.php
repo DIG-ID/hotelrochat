@@ -35,7 +35,7 @@
                 $post_link = get_permalink();
                 $post_title = get_the_title(); 
                 ?>
-                    <div class="col-span-1 md:col-span-2 xl:col-span-4 relative group overflow-hidden">
+                    <div class="col-span-2 md:col-span-3 xl:col-span-4 relative group overflow-hidden">
                         <a href="<?php echo esc_url($post_link); ?>" class="block w-full h-full">
                             <div class="w-full h-full bg-cover bg-center" style="background-image: url('<?php echo esc_url($featured_img); ?>');">
                                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">

@@ -5,7 +5,7 @@ $bg_image_url = wp_get_attachment_image_src($bg_image_id, 'full'); // 'full' or 
 
 <section class="section-hero relative w-full">
     <div class="custom-container">
-        <div class="xl:h-[630px] bg-no-repeat bg-cover bg-center" <?php if( $bg_image_url ): ?> style="background-image: url('<?php echo esc_url($bg_image_url[0]); ?>')" <?php endif; ?>>
+        <div class="xl:h-[630px] bg-no-repeat bg-cover bg-center min-h-[550px] md:min-h-0" <?php if( $bg_image_url ): ?> style="background-image: url('<?php echo esc_url($bg_image_url[0]); ?>')" <?php endif; ?>>
             <div class="block mx-[35px] py-[30px]">
                 <a href="<?php echo get_home_url(); ?>" id="grand-logo">
                     <?php 
