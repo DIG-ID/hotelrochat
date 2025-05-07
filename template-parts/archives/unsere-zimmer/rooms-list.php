@@ -28,7 +28,7 @@
                 ?>
             </div>
         </div>
-        <div class="theme-grid">
+        <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-6 2xl:gap-x-20">
         <?php
             while ($zimmer_query->have_posts()) : $zimmer_query->the_post();
             $featured_img = get_the_post_thumbnail_url(get_the_ID(), 'zimmer-image');
