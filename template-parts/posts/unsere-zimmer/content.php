@@ -37,7 +37,8 @@
 
         </div>
         <?php
-        // Get all post IDs of this CPT, ordered by date (ASC or DESC as you prefer)
+        $current_language = apply_filters('wpml_current_language', null);
+
         $all_posts = get_posts([
             'post_type' => 'unsere-zimmer',
             'posts_per_page' => -1,
@@ -45,7 +46,10 @@
             'order' => 'ASC',
             'post_status' => 'publish',
             'fields' => 'ids',
+            'suppress_filters' => false, // Allow WPML to filter by language
+            'lang' => $current_language, // Limit to current language posts only
         ]);
+        
 
         $current_post_id = get_the_ID();
         $current_index = array_search($current_post_id, $all_posts);

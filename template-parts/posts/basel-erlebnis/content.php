@@ -81,12 +81,18 @@
                 </div>
 
                 <?php
+                global $sitepress; // Ensure WPML global is accessible
+
+                $current_language = apply_filters( 'wpml_current_language', null );
+                
                 $all_posts = get_posts([
                     'post_type' => 'basel-erlebnis',
                     'posts_per_page' => -1,
                     'orderby' => 'date',
                     'order' => 'ASC',
                     'post_status' => 'publish',
+                    'suppress_filters' => false, // <-- Important for WPML to work
+                    'lang' => $current_language, // <-- Only get posts in the current language
                     'fields' => 'ids',
                 ]);
 
