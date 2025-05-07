@@ -38,7 +38,7 @@
                 <div class="col-span-2 md:col-span-3 xl:col-span-4 relative group overflow-hidden">
                     <a href="<?php echo esc_url($post_link); ?>" class="block w-full h-full">
                         <div class="w-full h-full bg-cover bg-center" style="background-image: url('<?php echo esc_url($featured_img); ?>');">
-                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                                 <div class="text-center text-white px-4">
                                     <div class="text-xl text-white mb-1"> - - </div>
                                     <h3 class="rooms-overview-title text-white mb-1"><?php echo esc_html($post_title); ?></h3>

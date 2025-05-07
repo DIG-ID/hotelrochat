@@ -38,3 +38,6 @@
 <div class="section-separator">
     <img class="w-[35px] h-[12px] mx-auto" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/separator@2x.png" alt="separator" title="Separator" >
 </div>
+<div class="custom-container">
+    <?php get_template_part( 'template-parts/components/sbb-form' ); ?>
+</div>
