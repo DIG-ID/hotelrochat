@@ -92,7 +92,7 @@
             <img class="w-[35px] h-[12px] mx-auto" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/separator@2x.png" alt="separator" title="Separator" >
         </div>
 
-        <h1 class="main-title text-gold pb-10 pt-5"><?php esc_html_e( 'Andere Zimmer', 'hotelrochat' ) ?></h1>
+        <h2 class="main-title text-gold pb-10 pt-5"><?php esc_html_e( 'Andere Zimmer', 'hotelrochat' ) ?></h2>
         <?php
         $args = array(
             'post_type' => 'unsere-zimmer',

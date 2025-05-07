@@ -34,9 +34,9 @@
                 if( have_rows('content') ):
                     while( have_rows('content') ) : the_row();?>
                         <?php if( get_sub_field('main_title') ) : ?>
-                        <div class="main-title text-gold">
+                        <h2 class="main-title text-gold">
                             <?php the_sub_field('main_title'); ?>                            
-                        </div>
+                        </h2>
                         <?php endif; ?>
                         <?php if( get_sub_field('title') ) : ?>
                         <div class="secondary-title text-gold mb-5">

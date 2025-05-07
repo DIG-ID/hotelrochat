@@ -2,7 +2,7 @@
     <div class="custom-container">
         <div class="theme-grid md:w-2/3">
             <div class="col-span-2 md:col-span-6 xl:col-span-12">
-                <h2 class="main-title-bigger text-gold pt-5 pb-10"><?php the_field( 'basel_title', 'option' ); ?></h2>
+                <h1 class="main-title-bigger text-gold pt-5 pb-10"><?php the_field( 'basel_title', 'option' ); ?></h1>
             </div>
         </div>
         <?php

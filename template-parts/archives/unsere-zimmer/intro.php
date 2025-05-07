@@ -2,7 +2,7 @@
     <div class="custom-container">
         <div class="theme-grid">
             <div class="col-span-2 md:col-span-6 xl:col-span-12 text-center">
-                <h2 class="main-title-bigger text-gold pb-10 pt-5"><?php the_field( 'zimmer_intro_title', 'option' ); ?></h2>
+                <h1 class="main-title-bigger text-gold pb-10 pt-5"><?php the_field( 'zimmer_intro_title', 'option' ); ?></h1>
                 <p class="text-body !leading-[32px] mb-[10px]"><?php the_field( 'zimmer_intro_text', 'option' ); ?></p>
             </div>
         </div>
