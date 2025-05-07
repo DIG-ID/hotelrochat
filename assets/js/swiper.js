@@ -1,7 +1,29 @@
 import Swiper from 'swiper/bundle';
+import { Navigation, Autoplay } from 'swiper/modules';
+
+Swiper.use([Navigation, Autoplay]);
 
 //wait until images, links, fonts, stylesheets, and js is loaded
 window.addEventListener("load", () => {
+
+  var amenitiesSwiper = new Swiper('.amenities-swiper', {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 5 },
+        1536: { slidesPerView: 8 },
+    },
+  });
 
 	if ( $(".home")[0] ) {
 		var eventsSwiper = new Swiper('.events-swiper', {
