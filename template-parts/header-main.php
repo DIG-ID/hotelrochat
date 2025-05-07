@@ -56,11 +56,11 @@
         </div>
     </div>
 </header>
-<div id="menu-overlay" class="fixed inset-0 bg-[rgba(194,150,63,0.9)] z-[9999] hidden items-center justify-center flex-col">
-    <button id="close-overlay" class="absolute top-6 right-6 text-white text-4xl font-light leading-none focus:outline-none hover:scale-110 transition-transform duration-200">
-        &times;
-    </button>
-    <nav class="text-center">
+<div id="menu-overlay" class="fixed inset-0 bg-[rgba(194,150,63,0.9)] z-[9999] hidden items-center justify-center flex-col scale-x-0 origin-center">
+    <button id="close-overlay" class="overlay-close" type="button" aria-label="Close menu">Close</button>
+
+
+    <nav id="overlay-menu" class="text-center opacity-0 pointer-events-none transition-opacity duration-300">
         <?php
         wp_nav_menu(array(
             'theme_location' => 'main-menu',
