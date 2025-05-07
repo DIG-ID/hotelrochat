@@ -134,7 +134,7 @@
                 </div>
 
             </div>
-            <div class="col-span-2 md:col-span-6 xl:col-span-3 col-start-1 md:col-start-1 xl:col-start-10 md:px-4">
+            <div class="sidebar col-span-2 md:col-span-6 xl:col-span-3 col-start-1 md:col-start-1 xl:col-start-10 md:px-4">
                 <p class="font-prata text-[30px] font-normal leading-[33px] text-gold mb-5"><?php esc_html_e( 'Zugehörige Beiträge', 'hotelrochat' ) ?></p>
                 <?php
                 $args = array(
@@ -174,6 +174,54 @@
                 }
                 </style>
                 <p class="font-prata text-[30px] font-normal leading-[33px] text-gold mb-5"><?php esc_html_e( 'Share this page', 'hotelrochat' ) ?></p>
+                <?php
+                $post_url = urlencode(get_permalink());
+                $post_title = urlencode(get_the_title());
+                ?>
+
+                <div class="flex items-center space-x-4 text-[#C2963F] mt-2">
+
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" 
+                    target="_blank" 
+                    rel="noopener" 
+                    aria-label="Share on Facebook" 
+                    class="text-[#C2963F] hover:text-black transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 320 512">
+                            <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"/>
+                        </svg>
+                    </a>
+                    <!-- X / Twitter -->
+                    <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" 
+                    target="_blank" 
+                    rel="noopener" 
+                    aria-label="Share on X" 
+                    class="text-[#C2963F] hover:text-black transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 512 512">
+                            <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode(get_permalink()); ?>&title=<?php echo urlencode(get_the_title()); ?>" 
+                    target="_blank" 
+                    rel="noopener" 
+                    aria-label="Share on LinkedIn" 
+                    class="text-[#C2963F] hover:text-black transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 448 512">
+                            <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/>
+                        </svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:?subject=<?php echo urlencode(get_the_title()); ?>&body=<?php echo urlencode(get_permalink()); ?>" 
+                    target="_blank" 
+                    rel="noopener" 
+                    aria-label="Share via Email" 
+                    class="text-[#C2963F] hover:text-black transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 512 512">
+                            <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
