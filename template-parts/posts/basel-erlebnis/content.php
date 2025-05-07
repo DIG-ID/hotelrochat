@@ -135,6 +135,20 @@
 
             </div>
             <div class="sidebar col-span-2 md:col-span-6 xl:col-span-3 col-start-1 md:col-start-1 xl:col-start-10 md:px-4">
+                <p class="font-prata text-[30px] font-normal leading-[33px] text-gold mb-2">
+                    <?php esc_html_e('Suche', 'hotelrochat'); ?>
+                </p>
+
+                <!-- Search Form -->
+                <form id="basel-search-form" class="flex mb-7">
+                    <input type="search" id="basel-search-input" name="s" placeholder="Suchbegriff…" class="flex-grow border border-gray-300 px-4 py-2 text-sm rounded-l-[4px]" required>
+                    <button type="submit" class="border border-l-0 border-gray-300 px-4 py-2 text-sm bg-white rounded-r-[4px]">OK</button>
+                </form>
+
+                <!-- Search Results Placeholder -->
+                <div id="basel-search-results" class="space-y-6 mb-10"></div>
+
+
                 <p class="font-prata text-[30px] font-normal leading-[33px] text-gold mb-5"><?php esc_html_e( 'Zugehörige Beiträge', 'hotelrochat' ) ?></p>
                 <?php
                 $args = array(

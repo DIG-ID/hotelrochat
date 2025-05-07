@@ -144,6 +144,88 @@ function rochat_theme_lower_yoast_metabox_priority( $priority ) {
 add_filter( 'wpseo_metabox_prio', 'rochat_theme_lower_yoast_metabox_priority' );
 
 
+/**
+ * Search form
+ */
+add_action('rest_api_init', function () {
+    register_rest_route('basel-erlebnis/v1', '/search', [
+        'methods'             => 'GET',
+        'callback'            => 'search_basel_erlebnis',
+        'permission_callback' => '__return_true',
+    ]);
+});
+
+function search_basel_erlebnis(WP_REST_Request $request) {
+    $term = sanitize_text_field($request->get_param('s'));
+    $results = [];
+
+    $query = new WP_Query([
+        'post_type'      => 'basel-erlebnis',
+        'posts_per_page' => 20,
+        'post_status'    => 'publish',
+    ]);
+
+    foreach ($query->posts as $post) {
+        $match = false;
+        $title = get_the_title($post);
+        $excerpt = '';
+
+		$intro = get_field('intro_description', $post->ID);
+		if ($intro) {
+			$excerpt = wp_trim_words(strip_tags($intro), 30, '...');
+		} elseif ($content_rows = get_field('content', $post->ID)) {
+			foreach ($content_rows as $row) {
+				if (!empty($row['text'])) {
+					$excerpt = wp_trim_words(strip_tags($row['text']), 30, '...');
+					break;
+				}
+			}
+		}
+
+        $link = get_permalink($post);
+
+        // Check ACF fields (add any that apply)
+        $intro_description = get_field('intro_description', $post->ID);
+        $content_rows = get_field('content', $post->ID); // repeater
+
+        // Look for match in title, excerpt, or ACF fields
+        if (
+            stripos($title, $term) !== false ||
+            stripos($excerpt, $term) !== false ||
+            stripos($intro_description, $term) !== false
+        ) {
+            $match = true;
+        }
+
+        // Also check content repeater subfields
+        if (!$match && is_array($content_rows)) {
+            foreach ($content_rows as $row) {
+                if (
+                    !empty($row['main_title']) && stripos($row['main_title'], $term) !== false ||
+                    !empty($row['title']) && stripos($row['title'], $term) !== false ||
+                    !empty($row['text']) && stripos($row['text'], $term) !== false
+                ) {
+                    $match = true;
+                    break;
+                }
+            }
+        }
+
+        if ($match) {
+            $results[] = [
+                'title'   => $title,
+                'excerpt' => $excerpt,
+                'link'    => $link,
+            ];
+        }
+    }
+
+    return rest_ensure_response($results);
+}
+
+
+
+
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
 
