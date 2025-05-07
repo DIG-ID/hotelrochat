@@ -21,7 +21,16 @@
                 <p class="text-body mb-[10px]"><?php the_field( 'contact_info', 'option' ); ?></p>
                 <h3 class="text-gold my-5"><?php the_field( 'access_title', 'option' ); ?></h3>
                 <p class="text-body mb-[10px]"><?php the_field( 'access_description', 'option' ); ?></p>
-                <p class="text-body !text-[0.8em] mt-[70px]"><?php the_field( 'access_data_policy', 'option' ); ?></p>
+                <?php
+                wp_nav_menu( array(
+                    'theme_location'  => 'copyright-menu',
+                    'container'       => 'nav',
+                    'container_class' => 'mt-[70px]',
+                    'menu_class'      => 'flex flex-wrap gap-4 text_link text-[0.8em]',
+                    'depth'           => 1,
+                    'fallback_cb'     => false
+                ) );
+                ?>
             </div>
         </div>
     </div>

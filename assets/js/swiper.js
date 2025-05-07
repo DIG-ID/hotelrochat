@@ -14,8 +14,13 @@ window.addEventListener("load", () => {
       fadeEffect: {
           crossFade: true,
       },
+      speed: 1500,
       slidesPerView: 1,
       spaceBetween: 20,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      }
     });
           
 	}
@@ -31,6 +36,11 @@ window.addEventListener("load", () => {
       fadeEffect: {
           crossFade: true,
       },
+      speed: 1500,
+      autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+      }
     });
   }
 	

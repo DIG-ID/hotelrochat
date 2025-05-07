@@ -1,7 +1,7 @@
 <header id="header-main" class="header-main w-full z-50 overflow-hidden fixed bg-white top-0" itemscope itemtype="http://schema.org/WebSite">
     <div class="custom-container-fluid py-[15px]">
         <div class="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-12 md:gap-6">
-            <div class="col-span-1 md:col-span-1 xl:col-span-3">
+            <div class="col-span-1 md:col-span-2 lg:col-span-1 xl:col-span-4">
             <?php
             if (function_exists('icl_get_languages')) {
                 $languages = icl_get_languages('skip_missing=0');
@@ -40,18 +40,18 @@
 
 
             </div>
-            <div class="col-span-1 md:col-span-4 xl:col-span-6 text-center flex flex-row justify-center items-center">
+            <div class="col-span-1 md:col-span-2 lg:col-span-4 xl:col-span-4 text-center flex flex-row justify-center items-center">
                 <a href="mailto:<?php the_field( 'contact_email', 'option' ); ?>" class="text-body hidden md:block"><?php the_field( 'contact_email', 'option' ); ?></a>
                 <span class="text-gold font-bold w-3 hidden md:block"> | </span>
                 <a href="tel:<?php the_field( 'contact_phone', 'option' ); ?>" class="text-body"><?php the_field( 'contact_phone', 'option' ); ?></a>
             </div>
-            <div class="col-span-1 md:col-span-1 xl:col-span-3">
-            <a id="trigger-overlay" class="btn-menu ml-auto block relative w-[50px] h-[25px] cursor-pointer" role="button">
-                <span class="line line-1"></span>
-                <span class="line line-2"></span>
-                <span class="line line-3"></span>
-            </a>
-
+            <div class="col-span-1 md:col-span-2 lg:col-span-1 xl:col-span-4 flex flex-row justify-end items-end">
+                <a href="<?php the_field( 'general_booking_engine_url', 'option' ); ?>" class="btn btn-header hidden lg:inline-block" target="_blank"><?php esc_html_e( 'Jetzt buchen', 'hotelrochat' ); ?></a>
+                <a id="trigger-overlay" class="btn-menu ml-8 block relative w-[50px] h-[25px] cursor-pointer" role="button">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </a>
             </div>
         </div>
     </div>

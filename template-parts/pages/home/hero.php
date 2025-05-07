@@ -18,7 +18,7 @@ $bg_image_url = wp_get_attachment_image_src($bg_image_id, 'full'); // 'full' or 
                 </a>
             </div>
             <div class="block text-center">
-                <h1 class="main-title-uppercase text-gold mb-10"><?php the_field( 'hero_title' ); ?></h1>
+                <h2 class="main-title-uppercase text-gold mb-10"><?php the_field( 'hero_title' ); ?></h2>
                 <a href="<?php the_field( 'general_booking_engine_url', 'option' ); ?>" class="btn btn-primary mt-[15px] mx-auto" target="_blank"><?php esc_html_e( 'Jetzt buchen', 'hotelrochat' ); ?></a>
             </div>
         </div>

@@ -2,7 +2,7 @@
     <div class="custom-container">
         <div class="theme-grid">
             <div class="col-span-2 md:col-span-6 xl:col-span-12 text-center py-[30px] md:px-[15%]">
-                <h2 class="main-title text-gold"><?php the_field( 'intro_title' ); ?></h2>
+                <h1 class="main-title text-gold"><?php the_field( 'intro_title' ); ?></h1>
                 <p class="text-body mb-[10px]"><?php the_field( 'intro_intro' ); ?></p>
                 <p class="text-body"><?php the_field( 'intro_text' ); ?></p>
             </div>

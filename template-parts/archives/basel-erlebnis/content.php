@@ -25,7 +25,7 @@
                         <div class="p-2">
                             <h3 class="secondary-title text-gold py-7"><?php the_title(); ?></h3>
                             <p class="text-body"><?php the_field( 'overview_description' ); ?></p>
-                            <a href="<?php the_permalink(); ?>" class="btn btn-secondary mt-[15px]" target="_blank"><?php the_title(); ?></a>
+                            <a href="<?php the_permalink(); ?>" class="btn btn-secondary mt-[15px]"><?php the_title(); ?></a>
                         </div>
                     </div>
                 <?php endwhile; ?>
