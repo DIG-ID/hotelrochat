@@ -11,12 +11,16 @@
                     <img class="w-full mx-auto" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/basel-symbol.png" alt="separator" title="Separator" >
                 </figure>
             </div>
-            <div class="col-span-2 md:col-span-5 xl:col-span-5 px-[15px">
+            <div class="col-span-2 md:col-span-6 xl:col-span-12 col-start-1 md:col-start-1 xl:col-start-2 px-[15px]">
                 <h2 class="secondary-title text-gold py-5"><?php the_field( 'hotel_title' ); ?></h2>
+            </div>
+            <div class="col-span-2 md:col-span-6 xl:col-span-5 col-start-1 md:col-start-1 xl:col-start-2 px-[15px]">
                 <p class="text-body mb-[10px]"><?php the_field( 'address' ); ?></p>
                 <p class="text-body"><?php esc_html_e( 'Tel:', 'hotelrochat' ); ?><a href="tel:<?php the_field( 'contact_phone', 'option' ); ?>" class="text_link"><?php the_field( 'contact_phone', 'option' ); ?></a></p>
                 <p class="text-body mb-[10px]"><?php esc_html_e( 'e-mail: ', 'hotelrochat' ); ?><a href="mailto:<?php the_field( 'contact_email', 'option' ); ?>" class="text_link"><?php the_field( 'contact_email', 'option' ); ?></a></p>
                 <p class="text-body mb-[10px]"><?php the_field( 'extra_info' ); ?></p>
+            </div>
+            <div class="col-span-2 md:col-span-6 xl:col-span-5 col-start-1 md:col-start-1 xl:col-start-7 px-[15px]">
                 <figure class="text-center w-full mb-3">
                     <?php 
                         $image = get_field('image');
@@ -39,5 +43,10 @@
     <img class="w-[35px] h-[12px] mx-auto" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/separator@2x.png" alt="separator" title="Separator" >
 </div>
 <div class="custom-container">
-    <?php get_template_part( 'template-parts/components/sbb-form' ); ?>
+    <div class="theme-grid">
+        <div class="col-span-2 md:col-span-6 xl:col-span-12 col-start-1 md:col-start-1 xl:col-start-2 px-[15px]">
+            <h2 class="secondary-title text-gold py-5"><?php esc_html_e( 'Fahrplan & Billettkauf', 'hotelrochat' ) ?></h2>
+            <?php get_template_part( 'template-parts/components/sbb-form' ); ?>
+        </div>
+    </div>
 </div>

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 resultsContainer.innerHTML = data.map(post => `
                 <div>
-                    <h3 class="font-prata text-[20px] text-gold mb-1">${highlight(post.title, query)}</h3>
+                    <h4 class="font-prata text-[20px] text-gold mb-1">${highlight(post.title, query)}</h4>
                     <p class="text-sm mb-1">${highlight(post.excerpt, query)}</p>
                     <a href="${post.link}" class="text-sm text-blue-600 hover:underline">${post.link}</a>
                 </div>

@@ -44,7 +44,7 @@
     <div class="w-full px-4 py-8 space-y-8">
 
       <!-- Logo Row -->
-      <div class="w-full flex justify-center">
+      <div class="w-full flex justify-start">
           <img 
               alt="sbb logo" 
               src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/sbb_extension.svg" 
@@ -61,19 +61,19 @@
               endif; ?>" 
           action="#" 
           id="sbbapp" 
-          class="w-full max-w-4xl mx-auto space-y-6"
+          class="w-full max-w-4xl space-y-6"
       >
 
         <!-- FROM + TO -->
         <div class="flex flex-col lg:flex-row gap-4">
             <div class="flex items-center border-b border-black w-full">
-                <label class="text-black pr-3 whitespace-nowrap">
+                <label class="text-black pr-3 whitespace-nowrap text-left">
                     <?php echo ICL_LANGUAGE_CODE === 'de' ? 'Von:' : (ICL_LANGUAGE_CODE === 'fr' ? 'De:' : 'From:'); ?>
                 </label>
                 <input id="from" name="from" type="text" placeholder="<?php echo ICL_LANGUAGE_CODE === 'de' ? 'Ort' : (ICL_LANGUAGE_CODE === 'fr' ? 'Emplacement' : 'Location'); ?>" class="bg-transparent border-none focus:outline-none text-[18px] font-thin w-full">
             </div>
             <div class="flex items-center border-b border-black w-full">
-                <label class="text-black pr-3 whitespace-nowrap">
+                <label class="text-black pr-3 whitespace-nowrap text-left">
                     <?php echo ICL_LANGUAGE_CODE === 'de' ? 'Nach:' : (ICL_LANGUAGE_CODE === 'fr' ? 'À:' : 'To:'); ?>
                 </label>
                 <input id="to" name="to" type="text" value="Bern" class="bg-transparent border-none focus:outline-none text-[18px] font-thin w-full">
@@ -83,13 +83,13 @@
         <!-- DATE + TIME -->
         <div class="flex flex-col lg:flex-row gap-4">
             <div class="flex items-center border-b border-black w-full">
-                <label class="text-black pr-3 whitespace-nowrap">
+                <label class="text-black pr-3 whitespace-nowrap text-left">
                     <?php echo ICL_LANGUAGE_CODE === 'de' ? 'Datum:' : 'Date:'; ?>
                 </label>
                 <input id="date" name="date" type="text" class="bg-transparent border-none focus:outline-none text-[18px] font-thin w-full">
             </div>
             <div class="flex items-center border-b border-black w-full">
-                <label class="text-black pr-3 whitespace-nowrap">
+                <label class="text-black pr-3 whitespace-nowrap text-left">
                     <?php echo ICL_LANGUAGE_CODE === 'de' ? 'Zeit:' : (ICL_LANGUAGE_CODE === 'fr' ? 'Heure:' : 'Time:'); ?>
                 </label>
                 <input id="time" name="time" type="text" class="bg-transparent border-none focus:outline-none text-[18px] font-thin w-full">
@@ -100,13 +100,13 @@
         <div class="flex gap-6 pt-2">
             <div class="flex items-center">
                 <input type="radio" id="departure" name="isArrival" value="false" checked class="accent-black">
-                <label for="departure" class="pl-2">
+                <label for="departure" class="pl-2 text-left">
                     <?php echo ICL_LANGUAGE_CODE === 'de' ? 'Abfahrt' : (ICL_LANGUAGE_CODE === 'fr' ? 'Départ' : 'Departure'); ?>
                 </label>
             </div>
             <div class="flex items-center">
                 <input type="radio" id="arrival" name="isArrival" value="true" class="accent-black">
-                <label for="arrival" class="pl-2">
+                <label for="arrival" class="pl-2 text-left">
                     <?php echo ICL_LANGUAGE_CODE === 'de' ? 'Ankunft' : (ICL_LANGUAGE_CODE === 'fr' ? 'Arrivée' : 'Arrival'); ?>
                 </label>
             </div>
