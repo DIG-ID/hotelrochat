@@ -34,32 +34,4 @@
             </div>
         </div>
     </div>
-    <?php if( have_rows('amenities_list', 'option') ): ?>
-        <div class="amenities-wrapper relative px-[6%] py-10 flex items-center"> <!-- make wrapper a flex row -->
-            
-            <!-- Navigation Arrows -->
-            <div class="swiper-button-prev text-gold absolute left-0 top-[80%] translate-y-[-70%] z-10"></div>
-
-            <!-- Swiper Container -->
-            <div class="swiper amenities-swiper w-full">
-                <div class="swiper-wrapper items-center"> <!-- ensures slides themselves are vertically centered -->
-                    <?php while( have_rows('amenities_list', 'option') ): the_row();
-                        $icon = get_sub_field('icon');
-                        $label = get_sub_field('label');
-                        $icon_url = wp_get_attachment_image_url($icon, 'thumbnail');
-                        $icon_alt = get_post_meta($icon, '_wp_attachment_image_alt', true);
-                    ?>
-                        <div class="swiper-slide text-gold flex items-center space-x-3 px-2">
-                            <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>" class="w-[40px] h-[40px] object-contain flex-shrink-0">
-                            <span class="text-sm leading-tight text-left"><?php echo $label; ?></span>
-                        </div>
-                    <?php endwhile; ?>
-                </div>
-            </div>
-
-            <div class="swiper-button-next text-gold absolute right-0 top-[80%] translate-y-[-70%] z-10"></div>
-
-        </div>
-    <?php endif; ?>
-
 </footer>
