@@ -24,7 +24,7 @@ body
 .main-title-bigger
   @apply font-prata text-[2.75rem] md:text-[5rem] font-normal leading-[50px] md:leading-[88px]
 
-.secondary-title
+.secondary-title, .wp-block-heading
   @apply font-prata text-[25px] md:text-[40px] font-normal leading-[44px]
 
 .nav-post-title
@@ -32,6 +32,12 @@ body
 
 .rooms-overview-title
   @apply font-prata text-[30px] leading-[33px]
+
+.wp-singular.page-template-default.page
+  .wp-block-heading
+    @apply text-gold my-5
+  p
+    @apply font-montserrat text-[15px] leading-[22px]
 
 /* Headings */
 h1, h2, h3, h4, h5, h6
