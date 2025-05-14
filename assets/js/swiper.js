@@ -9,9 +9,12 @@ window.addEventListener("load", () => {
   var amenitiesSwiper = new Swiper('.amenities-swiper', {
     slidesPerView: 2,
     spaceBetween: 20,
+    speed: 3000, // how fast the transition runs
     loop: true,
+    freeMode: true,
+    freeModeMomentum: false,
     autoplay: {
-        delay: 3000,
+        delay: 0, // no pause between transitions
         disableOnInteraction: false,
     },
     navigation: {
@@ -23,7 +26,8 @@ window.addEventListener("load", () => {
         1024: { slidesPerView: 5 },
         1536: { slidesPerView: 8 },
     },
-  });
+});
+
 
 	if ( $(".home")[0] ) {
 		var eventsSwiper = new Swiper('.events-swiper', {
