@@ -91,14 +91,14 @@
         $archive_link = get_post_type_archive_link('unsere-zimmer');
         ?>
 
-        <div class="grid grid-cols-3 items-center text-sm text-gold pt-[60px] mb-5">
-            <div class="text-left px-[15px]">
+        <div class="grid grid-cols-10 sm:grid-cols-3 items-center text-sm text-gold pt-[60px] mb-5">
+            <div class="col-span-4 sm:col-span-1 text-left px-[15px]">
                 <h5 class="nav-post-title"><?php esc_html_e( 'Zurück', 'hotelrochat' ) ?></h5>
                 <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class="text_link text-[15px]">
                     <?php echo esc_html( get_the_title( $prev_post->ID ) ); ?>
                 </a>
             </div>
-            <div class="text-center">
+            <div class="col-span-2 sm:col-span-1 text-center">
                 <h5 class="nav-post-title h-[22px]"></h5>
                 <a href="<?php echo esc_url( $archive_link ); ?>" class="inline-block font-semibold hover:opacity-80 transition-opacity">
                     <svg class="w-5 h-5 fill-[#C2963F]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
@@ -106,7 +106,7 @@
                     </svg>
                 </a>
             </div>
-            <div class="text-right px-[15px]">
+            <div class="col-span-4 sm:col-span-1 text-right px-[15px]">
                 <h5 class="nav-post-title"><?php esc_html_e( 'Nächste', 'hotelrochat' ) ?></h5>
                 <a href="<?php echo get_permalink( $next_post->ID ); ?>" class="text_link text-[15px]">
                     <?php echo esc_html( get_the_title( $next_post->ID ) ); ?>
