@@ -38,5 +38,14 @@ blockquote
             text-decoration-style: double
         ol
             list-style: auto
-            padding-left: 30px
             margin-bottom: 30px
+
+        li:not(:has(strong))
+            padding-left: 30px
+        
+        li
+            strong
+                @apply font-prata text-[1.25rem] font-normal leading-[1.1]
+
+        .wp-block-list
+            margin-top: 30px
