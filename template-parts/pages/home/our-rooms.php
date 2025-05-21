@@ -29,9 +29,10 @@ $rooms_image_url = wp_get_attachment_image_src($rooms_image_id, 'full'); // 'ful
                         $label = get_sub_field('label');
                         $icon_url = wp_get_attachment_image_url($icon, 'thumbnail');
                         $icon_alt = get_post_meta($icon, '_wp_attachment_image_alt', true);
+                        $icon_title = get_the_title($icon);
                     ?>
                         <div class="swiper-slide text-gold flex items-center space-x-3 px-2">
-                            <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>" class="w-[40px] h-[40px] object-contain flex-shrink-0">
+                            <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>" title="<?php echo esc_attr($icon_title); ?>" class="w-[40px] h-[40px] object-contain flex-shrink-0">
                             <span class="text-sm leading-tight text-left"><?php echo $label; ?></span>
                         </div>
                     <?php endwhile; ?>

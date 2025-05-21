@@ -22,8 +22,9 @@
                                 <?php
                                 $img_url = wp_get_attachment_image_url($image_id, 'full');
                                 $alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+                                $title = get_the_title($image_id);
                                 ?>
-                                <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($alt); ?>" class="w-full h-auto" />
+                                <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($alt); ?>" title="<?php echo esc_attr($title); ?>" class="w-full h-auto" />
                             </div>
                         <?php endforeach; ?>
                     </div>

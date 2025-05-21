@@ -48,7 +48,7 @@
                                 </div>
                             </div>
 
-                            <img src="<?php echo esc_url($featured_img); ?>" alt="<?php echo esc_attr($post_title); ?>" class="invisible w-full h-full object-cover" />
+                            <img src="<?php echo esc_url($featured_img); ?>" alt="<?php echo esc_attr($post_title); ?>" title="<?php echo esc_attr($post_title); ?>" class="invisible w-full h-full object-cover" />
                         </div>
                     </a>
                 </div>

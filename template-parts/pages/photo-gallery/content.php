@@ -15,8 +15,9 @@
                     $url_full = wp_get_attachment_image_url( $image_id, 'full' );
                     $url_thumb = wp_get_attachment_image_url( $image_id, 'gallery-thumbs' );
                     $alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+                    $title = get_the_title( $image_id );
                 ?>
-                <a href="<?php echo esc_url($url_full); ?>" data-fancybox="gallery" data-caption="<?php echo esc_attr($alt); ?>" class="relative group block">
+                <a href="<?php echo esc_url($url_full); ?>" data-fancybox="gallery" data-caption="<?php echo esc_attr($alt); ?>" title="<?php echo esc_attr($title); ?>"  class="relative group block">
                     <img src="<?php echo esc_url($url_thumb); ?>" alt="<?php echo esc_attr($alt); ?>" class="w-full h-auto min-h-[200px] object-cover" />
                     <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-[30px] h-[30px] text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
