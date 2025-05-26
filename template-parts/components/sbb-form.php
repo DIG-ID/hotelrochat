@@ -76,7 +76,7 @@
                 <label class="text-black pr-3 whitespace-nowrap text-left">
                     <?php echo ICL_LANGUAGE_CODE === 'de' ? 'Nach:' : (ICL_LANGUAGE_CODE === 'fr' ? 'À:' : 'To:'); ?>
                 </label>
-                <input id="to" name="to" type="text" value="Bern" class="bg-transparent border-none focus:outline-none text-[18px] font-thin w-full">
+                <input id="to" name="to" type="text" value="Basel SBB" class="bg-transparent border-none focus:outline-none text-[18px] font-thin w-full">
             </div>
         </div>
 
