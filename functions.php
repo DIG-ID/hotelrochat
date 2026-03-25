@@ -82,6 +82,16 @@ add_action( 'wp_head', 'rochat_preload_webfonts' );
 
 
 /**
+ * Dequeue Gutenberg block library CSS — not used in this custom ACF theme.
+ */
+add_action( 'wp_enqueue_scripts', function() {
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'wp-block-library-theme' );
+	wp_dequeue_style( 'global-styles' );
+}, 100 );
+
+
+/**
  * Preload the hero LCP image in <head> so the browser discovers it as early as possible.
  */
 function rochat_preload_hero_image() {
