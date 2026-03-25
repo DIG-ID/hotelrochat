@@ -82,6 +82,26 @@ add_action( 'wp_head', 'rochat_preload_webfonts' );
 
 
 /**
+ * Preload the hero LCP image in <head> so the browser discovers it as early as possible.
+ */
+function rochat_preload_hero_image() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+	$page_id     = get_option( 'page_on_front' );
+	$bg_image_id = get_field( 'hero_background', $page_id );
+	if ( ! $bg_image_id ) {
+		return;
+	}
+	$bg_image = wp_get_attachment_image_src( $bg_image_id, 'full' );
+	if ( $bg_image ) {
+		echo '<link rel="preload" as="image" href="' . esc_url( $bg_image[0] ) . '" fetchpriority="high">' . "\n";
+	}
+}
+add_action( 'wp_head', 'rochat_preload_hero_image', 1 );
+
+
+/**
  * Enqueue styles and scripts
  */
 function rochat_theme_enqueue_styles() {
