@@ -62,26 +62,18 @@ function rochat_theme_footer_widgets_init() {
 
 add_action( 'widgets_init', 'rochat_theme_footer_widgets_init' );
 
-if ( ! function_exists( 'rochat_get_font_face_styles' ) ) :
-	/**
-	 * Get font face styles.
-	 * This is used by the theme or editor to inject @import for Google Fonts.
-	 */
-	function rochat_get_font_face_styles() {
-		return "
-			@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Prata&display=swap');
-		";
-	}
-endif;
-
 if ( ! function_exists( 'rochat_preload_webfonts' ) ) :
 	/**
-	 * Preloads Google Fonts to improve performance.
+	 * Load Google Fonts non-blocking to avoid render-blocking requests.
 	 */
 	function rochat_preload_webfonts() {
+		$fonts_url = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Prata&display=swap';
 		?>
 		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preload" as="style" href="<?php echo esc_url( $fonts_url ); ?>">
+		<link rel="stylesheet" href="<?php echo esc_url( $fonts_url ); ?>" media="print" onload="this.media='all'">
+		<noscript><link rel="stylesheet" href="<?php echo esc_url( $fonts_url ); ?>"></noscript>
 		<?php
 	}
 endif;
@@ -100,8 +92,6 @@ function rochat_theme_enqueue_styles() {
 
 	// Register Theme main style.
 	wp_register_style( 'theme-styles', get_template_directory_uri() . '/dist/css/main.css', array(), $theme_version );
-	// Add styles inline.
-	wp_add_inline_style( 'theme-styles', rochat_get_font_face_styles() );
 	// Enqueue theme stylesheet.
 	wp_enqueue_style( 'theme-styles' );
 	//https://use.typekit.net/evg0ous.css first loaded fonts library backup
